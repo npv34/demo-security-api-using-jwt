@@ -68,4 +68,24 @@ class GroupController extends Controller
 
         return response()->json($data);
     }
+
+    function edit(Request $request, $id) {
+        $group = Group::find($id);
+        if (!$group) {
+            $data = [
+                'status' => 'error',
+                'message' => 'group not found'
+            ];
+
+        } else {
+            $group->name = $request->name;
+            $group->save();
+            $data = [
+                'status' => 'success',
+                'message' => 'update group success'
+            ];
+        }
+
+        return response()->json($data);
+    }
 }

@@ -17,6 +17,7 @@ Route::prefix('groups')->group(function () {
     Route::get('/', 'GroupController@getAll');
     Route::post('/store', 'GroupController@store');
     Route::get('/{id}', 'GroupController@getById');
+    Route::put('/{id}', 'GroupController@edit');
     Route::delete('/{id}/delete', 'GroupController@delete');
 
 });
