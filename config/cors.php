@@ -20,7 +20,7 @@ return [
         'allow_credentials' => false,
 
         'allow_origins' => [
-            'http://localhost:4200',
+            '*',
         ],
 
         'allow_methods' => [
